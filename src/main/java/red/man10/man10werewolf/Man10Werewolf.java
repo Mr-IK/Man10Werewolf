@@ -224,6 +224,10 @@ public final class Man10Werewolf extends JavaPlugin implements Listener {
                     return true;
                 }
                 Player target = Bukkit.getPlayer(args[1]);
+                if(p.getName().equalsIgnoreCase(target.getName())){
+                    p.sendMessage(prefix + "§4§l自分に投票はできません");
+                    return true;
+                }
                 UUID uuid = target.getUniqueId();
                 if(!join.containsKey(uuid)){
                     p.sendMessage(prefix + "§4§lその人は参加者ではありません");
@@ -317,7 +321,6 @@ public final class Man10Werewolf extends JavaPlugin implements Listener {
                     yaku.put(uuid, "吊り人");
                     Bukkit.getPlayer(uuid).sendMessage(prefix+"あなたは§d吊り人§fです");
                     Bukkit.getPlayer(uuid).sendMessage(prefix+"殺されるよう立ち回ろう！殺された時点で無条件に勝利します");
-                    uranaisi = uuid;
                     maxuranaisi--;
                 }else{
                     yaku.put(uuid, "村人");
