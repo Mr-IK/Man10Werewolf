@@ -1,0 +1,10 @@
+name: Man10Werewolf
+version: ${project.version}
+main: red.man10.man10werewolf.Man10Werewolf
+authors: [Mr_IK]
+description: Man10_ Werewolf_Plugin
+commands:
+  mww:
+    description: Man10werewolfcommand
+    usage: /<command>
+    default: op
